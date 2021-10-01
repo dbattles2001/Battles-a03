@@ -20,9 +20,20 @@ public class solution25 {
 
         password = input.next();
 
-        d.passwordValidator(password);
+        int strengthCount = d.passwordValidator(password);
+
+        //now that we have an assumed strengthCount, let's print out the results based on it.
+        //"returns 0 1 2 3 4 for values of strength with 0 being the weakest"
+        switch (strengthCount) {
+            case 0 -> System.out.println("How did you even put in a password this bad?");
+            case 1 -> System.out.println("Your password could be better.");
+            case 2 -> System.out.println("Your password is OK.");
+            case 3 -> System.out.println("Your password is strong.");
+            case 4 -> System.out.println("Your password is PERFECT!");
+            default -> System.out.println("Whoops.");
+        }
     }
-    public void passwordValidator(String password){
+    public int passwordValidator(String password){
         int strengthCount = 0;
 
         //Length checker
@@ -76,16 +87,6 @@ public class solution25 {
             }
         }
 
-
-        //now that we have an assumed strengthCount, let's print out the results based on it.
-        //"returns 0 1 2 3 4 for values of strength with 0 being the weakest"
-        switch (strengthCount) {
-            case 0 -> System.out.println("How did you even put in a password this bad?");
-            case 1 -> System.out.println("Your password could be better.");
-            case 2 -> System.out.println("Your password is OK.");
-            case 3 -> System.out.println("Your password is strong.");
-            case 4 -> System.out.println("Your password is PERFECT!");
-            default -> System.out.println("Whoops.");
-        }
+        return strengthCount;
     }
 }

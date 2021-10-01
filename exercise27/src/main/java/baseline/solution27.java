@@ -36,7 +36,7 @@ public class solution27 {
 
         d.validateEmployeeID(employeeID);
     }
-    public void validateNames(String firstName, String lastName){
+    private void validateNames(String firstName, String lastName){
         String[] stringArray = new String[2];
         stringArray[0] = firstName;
         stringArray[1] = lastName;
@@ -51,7 +51,7 @@ public class solution27 {
             }
         }
     }
-    public void validateZIP(String zip){
+    private void validateZIP(String zip){
         try{
             int n = Integer.parseInt(zip);
         }catch(NumberFormatException e){
@@ -62,19 +62,19 @@ public class solution27 {
             System.out.println("You've entered an incorrect ZIP code.");
         }
     }
-    public void validateEmployeeID(String employeeID){
-        String testerString = "AABBCCDDEEFFGGHHIIJJKKLLMMNNOOPPQQRRSSTTUUVVWWXXYYZZ";
-        if(testerString.contains(employeeID)){
-
-        }else{
-            System.out.println("You've entered an incorrect ID.");
+    private void validateEmployeeID(String employeeID){
+        if(!Character.isLetter(employeeID.charAt(0)) || !Character.isLetter(employeeID.charAt(1))){
+            System.out.println("You've entered an incorrect employee ID.");
             return;
         }
         if(employeeID.charAt(2) != '-'){
             System.out.println("You've entered an incorrect ID.");
             return;
         }
-
-
+        for(int i = 3; i<7; i++){
+            if(!Character.isDigit(employeeID.charAt(i))){
+                System.out.println("You've entered an incorrect ID.");
+            }
+        }
     }
 }

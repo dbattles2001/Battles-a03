@@ -7,43 +7,51 @@ package baseline;
 
 //(Solution 24)
 
+import java.util.Arrays;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class solution24 {
     public static void main(String[] args) {
-        /*
-            It's going to ask for input first
+        Scanner input = new Scanner(System.in);
+        solution24 d = new solution24();
 
-            print("what words would you like to test?")
-            print("word 1:")
-            string1 = nextLine
-            print("word 2:")
-            string2 = nextLine
+        //I accidentally deleted all of my skeleton code, so here it is again
 
-            We'll have isAnagram be boolean and then put it into an if loop
-            if(isAnagram(string1, string2)){
-                print("It's an anagram")
-            }else{
-                print("It's not an anagram")
-            }
-         */
+        //prompt the user for input
+
+        System.out.println("What would you like your first word to be?");
+        String firstWord = input.next();
+
+        System.out.println("Ok, and how about your second?");
+        String secondWord = input.next();
+
+        //call the anagramChecker
+        //its boolean so we're just gonna call it in an if statement
+
+        if (d.anagramChecker(firstWord, secondWord) == true) {
+            System.out.println("These two are anagrams.");
+        } else {
+            System.out.println("These two definitely aren't anagrams.");
+        }
     }
-
-    /*
-    isAnagram(string string1, string string2){
-
-        create two values that will hold the number of characters in each string, like
-        the frequency of each letter per string and then compare them
-        returning a 1 or a 0.
-
-        if(strings are the same size){
-            for(i<stringlength){
-                detect what character it is, and save it to its respective array
-
-                if the values of the two arrays holding the repetition of characters is the same, return 1
-            }
-        }else{
-            return 0
+    public boolean anagramChecker(String firstWord, String secondWord){
+        if(firstWord.length() != secondWord.length()){
+            return false;
         }
 
+        String s1 = firstWord.replaceAll("\\s", "");
+        String s2 = secondWord.replaceAll("\\s", "");
+
+        char[] arrayOne = s1.toLowerCase().toCharArray();
+        char[] arrayTwo = s2.toLowerCase().toCharArray();
+        Arrays.sort(arrayOne);
+        Arrays.sort(arrayTwo);
+
+        if(Arrays.equals(arrayOne, arrayTwo)){
+            return true;
+        }else{
+            return false;
+        }
     }
-     */
 }

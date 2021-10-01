@@ -44,4 +44,5 @@ public class solution29 {
 
         System.out.println("The years it'll take to double your investment are " + yearsItTakes);
     }
+
 }

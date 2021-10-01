@@ -1,4 +1,5 @@
 package baseline;
+import java.util.Scanner;
 
 /*
  *  UCF COP3330 Fall 2021 Assignment 3 Solutions
@@ -7,19 +8,23 @@ package baseline;
 
 //(Solution 26)
 
-public class solution26 {
+public class solution26 extends PaymentCalculator {
     public static void main(String[] args) {
-        /*
-            float i
-            float n
-            float b
-            float p
+        Scanner input = new Scanner(System.in);
+        solution26 d = new solution26();
+        double i;
+        double b;
+        double p;
 
-            scan in each variable asking the respective questions (balance, rate, etc)
+        //scan in each variable asking the respective questions (balance, rate, etc)
 
-            (this is another class for later) paymentCalculator(pass in the values)
-            use the method inside the calculator calculateMonthsUntilPaidOff using the formula and print it there
-            (rounding it of course)
-         */
+        System.out.println("What is your balance?");
+        b = input.nextDouble();
+        System.out.println("What is the APR on the card? (As a percent)");
+        i = input.nextDouble();
+        System.out.println("What is the monthly payment you can make?");
+        p = input.nextDouble();
+
+        d.calculateMonthsUntilPaidOff(i, b, p);
     }
 }

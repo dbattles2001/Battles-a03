@@ -1,7 +1,10 @@
 package baseline;
 
+import java.util.Scanner;
+
 public class solution34 {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         /*
             Enters in with a few random names i'll create printed out like this:
 
@@ -19,5 +22,37 @@ public class solution34 {
             will also change the number of employees which will be determined on opening,
             which is relevant to the second half of the assignment.
          */
+        int no = 0;
+        int removeChoice = 0;
+        int removed = 0;
+
+        String[] nameArray = {"Dustin Battles", "Dwayne Carter", "Antonio Brown", "Bob Evans"};
+
+        while(no == 0) {
+            for (int i = 0; i < nameArray.length; i++) {
+                if(nameArray[i] != "") {
+                    System.out.println(nameArray[i]);
+                }
+            }
+
+            System.out.println("Would you like to remove any of the employee's names? Please enter one (no) or zero (yes)");
+            no = input.nextInt();
+
+            if(no == 0) {
+                System.out.println("Alright, which one would you like to remove? Choose a corresponding name 0 - " + nameArray.length);
+                removeChoice = input.nextInt();
+            }
+
+            for(int i = 0; i<nameArray.length; i++){
+                if(i == removeChoice){
+                    nameArray[i] = "";
+                    removed++;
+                }
+            }
+
+            if(removed > nameArray.length){
+                no = 1;
+            }
+        }
     }
 }

@@ -22,24 +22,36 @@ public class solution28 {
 
             total is sum
          */
-        int numbersTotal;
-        int sum = 0;
+        int numbersTotal = 0;
+        int sum;
+        int conditionMet = 0;
+        int[] array = new int[10];
 
-        System.out.println("How many numbers would you like?");
-        numbersTotal = input.nextInt();
+        while(conditionMet == 0){
+            System.out.println("How many numbers would you like to add? (max 10)");
+            numbersTotal = input.nextInt();
 
-        sum = d.makeDaNumber(numbersTotal);
-
-        System.out.println("Your total is " + sum);
-    }
-    public int makeDaNumber(int numbersTotal){
-        int sum = 0;
-        Scanner input = new Scanner(System.in);
+            if(numbersTotal > 10){
+                System.out.println("I said less than 10.");
+            }else{
+                conditionMet = 1;
+            }
+        }
         for(int i = 0; i<numbersTotal; i++){
             System.out.println("Which number would you like?");
-            sum += input.nextInt();
+            array[i] = input.nextInt();
         }
+
+         sum = d.makeTheSumOf(array);
+
+        System.out.println("Your sum is " + sum);
+    }
+    public int makeTheSumOf(int[] array){
+        int sum = 0;
+        for(int i = 0; i<array.length; i++){
+            sum += array[i];
+        }
+
         return sum;
     }
-
 }

@@ -30,7 +30,7 @@ public class solution25 {
             case 2 -> System.out.println("Your password is OK.");
             case 3 -> System.out.println("Your password is strong.");
             case 4 -> System.out.println("Your password is PERFECT!");
-            default -> System.out.println("Whoops.");
+            default -> System.out.println("Seems an error's occurred.");
         }
     }
     public int passwordValidator(String password){

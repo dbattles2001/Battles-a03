@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class solution29 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        solution29 d = new solution29();
         /*
             I'll have a conditionMet variable (which is basically just the thing
             i use to determine if you've entered a valid input or not)
@@ -39,10 +40,14 @@ public class solution29 {
             }
         }
 
-        yearsAsAnInteger = Integer.parseInt(years);
-        int yearsItTakes = 72/yearsAsAnInteger;
+        int yearsItTakes = d.yearsItTakes(years);
 
         System.out.println("The years it'll take to double your investment are " + yearsItTakes);
     }
+    public int yearsItTakes(String years){
+        int yearsAsAnInteger = Integer.parseInt(years);
+        int yearsItTakes = 72/yearsAsAnInteger;
 
+        return yearsItTakes;
+    }
 }

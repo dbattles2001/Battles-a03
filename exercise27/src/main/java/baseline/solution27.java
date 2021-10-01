@@ -25,56 +25,71 @@ public class solution27 {
         System.out.println("What is your employee ID? (XX-9999 format)");
         String employeeID = input.next();
 
-        d.validateInput(firstName, lastName, zip, employeeID);
+        int numberOfErrors = d.validateInput(firstName, lastName, zip, employeeID);
     }
-    public void validateInput(String firstName, String lastName, String zip, String employeeID){
+    public int validateInput(String firstName, String lastName, String zip, String employeeID){
+        int errors = 0;
         solution27 d = new solution27();
 
-        d.validateNames(firstName, lastName);
+        /*
+            Just to explain; the errors bit is purely for testing. each time it gets a type of error
+            (names count as 1 together) it increments.
+         */
 
-        d.validateZIP(zip);
+        boolean namesTrue = d.validateNames(firstName, lastName);
+        if(!namesTrue){
+            errors++;
+        }
 
-        d.validateEmployeeID(employeeID);
+        boolean zipTrue = d.validateZIP(zip);
+        if(!zipTrue){
+            errors++;
+        }
+
+        boolean employeeIDTrue = d.validateEmployeeID(employeeID);
+        if(!employeeIDTrue){
+            errors++;
+        }
+
+        return errors;
     }
-    private void validateNames(String firstName, String lastName){
+    private boolean validateNames(String firstName, String lastName){
         String[] stringArray = new String[2];
         stringArray[0] = firstName;
         stringArray[1] = lastName;
+        boolean firstNameError = false;
 
         for(int i = 0; i<2; i++){
             if(stringArray[i] == "" || stringArray[i].length() < 2){
                 if(i == 0){
                     System.out.println("You've entered an incorrect first name.");
+                    firstNameError = true;
                 }else{
                     System.out.println("You've entered an incorrect last name.");
+                    return false;
                 }
             }
         }
-    }
-    private void validateZIP(String zip){
-        try{
-            int n = Integer.parseInt(zip);
-        }catch(NumberFormatException e){
-            System.out.println("You've entered an incorrect ZIP code.");
-        }
-
-        if(zip.length() != 5){
-            System.out.println("You've entered an incorrect ZIP code.");
+        if(firstNameError == true){
+            return false;
+        }else{
+            return true;
         }
     }
-    private void validateEmployeeID(String employeeID){
-        if(!Character.isLetter(employeeID.charAt(0)) || !Character.isLetter(employeeID.charAt(1))){
-            System.out.println("You've entered an incorrect employee ID.");
-            return;
+    private boolean validateZIP(String zip){
+        if(!zip.matches("\\d{5}")){
+            System.out.println("You've entered an incorrect zip code.");
+            return false;
+        }else{
+            return true;
         }
-        if(employeeID.charAt(2) != '-'){
-            System.out.println("You've entered an incorrect ID.");
-            return;
-        }
-        for(int i = 3; i<7; i++){
-            if(!Character.isDigit(employeeID.charAt(i))){
-                System.out.println("You've entered an incorrect ID.");
-            }
+    }
+    private boolean validateEmployeeID(String employeeID){
+        if(!employeeID.matches("^[A-Z]{2}[-][0-9]{4}")){
+            System.out.println("You've entered an incorrect employeeID.");
+            return false;
+        }else{
+            return true;
         }
     }
 }

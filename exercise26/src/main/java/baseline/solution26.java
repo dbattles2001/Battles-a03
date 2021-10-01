@@ -25,6 +25,8 @@ public class solution26 extends PaymentCalculator {
         System.out.println("What is the monthly payment you can make?");
         p = input.nextDouble();
 
-        d.calculateMonthsUntilPaidOff(i, b, p);
+        double months = d.calculateMonthsUntilPaidOff(i, b, p);
+
+        System.out.printf("It will take you %.0f months to pay this card off.", months);
     }
 }

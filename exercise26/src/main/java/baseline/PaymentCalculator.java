@@ -3,13 +3,16 @@ package baseline;
 import static java.lang.Math.log;
 
 public class PaymentCalculator {
-    public void calculateMonthsUntilPaidOff(double i, double b, double p){
+    public double calculateMonthsUntilPaidOff(double i, double b, double p){
         i /= 100.0;
+        i /= 365.0;
 
-        System.out.println(i);
+        double n = -(1.0/30.0) * Math.log(1.0 + b/p * (1.0 - Math.pow(1.0 + i, 30.0))) / Math.log(1.0 + i);
 
-        double n = -(1.0/30.0) * log(1.0 + b/p * (1.0 - Math.pow(1.0 + i, 30.0))) / log(1.0 + i);
+        if(n > Math.round(n)){
+            n = Math.round(n)+1;
+        }
 
-        System.out.printf("It will take you %.0f months to pay this card off.", n);
+        return n;
     }
 }

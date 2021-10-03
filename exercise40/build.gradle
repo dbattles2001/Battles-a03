@@ -22,3 +22,5 @@ test {
 run{
     standardInput = System.in
 }
+
+mainClassName = "baseline.Solution40"

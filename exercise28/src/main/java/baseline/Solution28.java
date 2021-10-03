@@ -1,10 +1,17 @@
 package baseline;
 import java.util.Scanner;
 
-public class solution28 {
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Dustin Battles
+ */
+
+//(Solution 28)
+
+public class Solution28 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        solution28 d = new solution28();
+        Solution28 d = new Solution28();
         /*
             how many numbers would you like to add up?
             int n = nextInt
@@ -48,8 +55,8 @@ public class solution28 {
     }
     public int makeTheSumOf(int[] array){
         int sum = 0;
-        for(int i = 0; i<array.length; i++){
-            sum += array[i];
+        for (int j : array) {
+            sum += j;
         }
 
         return sum;

@@ -8,13 +8,12 @@ package baseline;
 //(Solution 24)
 
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
-public class solution24 {
+public class Solution24 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        solution24 d = new solution24();
+        Solution24 d = new Solution24();
 
         //I accidentally deleted all of my skeleton code, so here it is again
 
@@ -29,7 +28,7 @@ public class solution24 {
         //call the anagramChecker
         //its boolean so we're just gonna call it in an if statement
 
-        if (d.anagramChecker(firstWord, secondWord) == true) {
+        if (d.anagramChecker(firstWord, secondWord)) {
             System.out.println("These two are anagrams.");
         } else {
             System.out.println("These two definitely aren't anagrams.");
@@ -48,10 +47,6 @@ public class solution24 {
         Arrays.sort(arrayOne);
         Arrays.sort(arrayTwo);
 
-        if(Arrays.equals(arrayOne, arrayTwo)){
-            return true;
-        }else{
-            return false;
-        }
+        return Arrays.equals(arrayOne, arrayTwo);
     }
 }

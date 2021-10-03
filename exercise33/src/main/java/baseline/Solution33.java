@@ -10,9 +10,8 @@ package baseline;
 import java.util.Random;
 import java.util.Scanner;
 
-public class solution33 {
+public class Solution33 {
     public static void main(String[] args) {
-        solution33 d = new solution33();
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
         /*
@@ -25,7 +24,8 @@ public class solution33 {
             switch statement based on the random number leading to a few random outputs
          */
         System.out.println("What is your question?");
-        String question = input.next();
+
+        input.next();
 
         int choice = rand.nextInt(5) + 1;
 

@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution28Test {
+class Solution28Test {
     @Test
-    public void test_makeTheSumOf(){
-        solution28 d = new solution28();
+    void test_makeTheSumOf(){
+        Solution28 d = new Solution28();
         int[] array = {0, 1, 2, 3};
 
-        assertEquals(d.makeTheSumOf(array), 6);
+        assertEquals(6, d.makeTheSumOf(array));
     }
 }

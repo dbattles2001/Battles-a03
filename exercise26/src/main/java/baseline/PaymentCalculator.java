@@ -10,7 +10,7 @@ public class PaymentCalculator {
         double n = -(1.0/30.0) * Math.log(1.0 + b/p * (1.0 - Math.pow(1.0 + i, 30.0))) / Math.log(1.0 + i);
 
         if(n > Math.round(n)){
-            n = Math.round(n)+1;
+            n = Math.round(n)+1.0;
         }
 
         return n;

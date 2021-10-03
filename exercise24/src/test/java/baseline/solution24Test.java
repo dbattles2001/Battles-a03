@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution24Test {
+class Solution24Test {
     @Test
-    public void test_anagramChecker(){
-        solution24 d = new solution24();
+    void test_anagramChecker(){
+        Solution24 d = new Solution24();
 
         String one = "hello";
         String two = "goodbye";

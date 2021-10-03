@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution31Test {
+class Solution31Test {
     @Test
-    public void test_calculateTargetHeartRate(){
-        solution31 d = new solution31();
+    void test_calculateTargetHeartRate(){
+        Solution31 d = new Solution31();
 
-        assertEquals(d.calculateTargetHeartRate(20, 70, 1), 136);
+        assertEquals(136, d.calculateTargetHeartRate(20, 70, 1));
     }
-
 }

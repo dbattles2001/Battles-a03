@@ -31,7 +31,7 @@ public class Solution36 {
         System.out.println("Welcome to the math machine, enter at least 3 numbers please.");
 
         while(condition == 0){
-            System.out.println("Enter a number:");
+            System.out.println("Enter a number (or type done when you're finished):");
             number = input.next();
 
             if(!number.equalsIgnoreCase("done")) {

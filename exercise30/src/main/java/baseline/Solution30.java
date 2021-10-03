@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 //Solution 30
 
-public class solution30 {
+public class Solution30 {
     public static void main(String[] args) {
         /*
             This one is super easy
@@ -27,7 +27,7 @@ public class solution30 {
                 }
                 System.out.printf("%d  ", i*j);
             }
-            System.out.printf("\n");
+            System.out.printf("%n");
         }
     }
 }

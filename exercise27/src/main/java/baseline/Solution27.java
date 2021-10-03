@@ -1,10 +1,18 @@
 package baseline;
+import java.util.Objects;
 import java.util.Scanner;
 
-public class solution27 {
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Dustin Battles
+ */
+
+//(Solution 27)
+
+public class Solution27 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        solution27 d = new solution27();
+        Solution27 d = new Solution27();
 
         /*
             Have the user enter input according to questions
@@ -26,10 +34,11 @@ public class solution27 {
         String employeeID = input.next();
 
         int numberOfErrors = d.validateInput(firstName, lastName, zip, employeeID);
+        System.out.println("You had " + numberOfErrors + " errors total.");
     }
     public int validateInput(String firstName, String lastName, String zip, String employeeID){
         int errors = 0;
-        solution27 d = new solution27();
+        Solution27 d = new Solution27();
 
         /*
             Just to explain; the errors bit is purely for testing. each time it gets a type of error
@@ -60,7 +69,7 @@ public class solution27 {
         boolean firstNameError = false;
 
         for(int i = 0; i<2; i++){
-            if(stringArray[i] == "" || stringArray[i].length() < 2){
+            if(Objects.equals(stringArray[i], "") || stringArray[i].length() < 2){
                 if(i == 0){
                     System.out.println("You've entered an incorrect first name.");
                     firstNameError = true;
@@ -70,11 +79,7 @@ public class solution27 {
                 }
             }
         }
-        if(firstNameError == true){
-            return false;
-        }else{
-            return true;
-        }
+        return !firstNameError;
     }
     private boolean validateZIP(String zip){
         if(!zip.matches("\\d{5}")){

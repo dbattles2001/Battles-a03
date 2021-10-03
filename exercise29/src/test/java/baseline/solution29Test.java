@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution29Test {
+class Solution29Test {
     @Test
-    public void test_yearsItTakes(){
-        solution29 d = new solution29();
+    void test_yearsItTakes(){
+        Solution29 d = new Solution29();
 
         String years = "72";
 
-        assertEquals(d.yearsItTakes(years), 1);
+        assertEquals(1, d.yearsItTakes(years));
     }
 
 }

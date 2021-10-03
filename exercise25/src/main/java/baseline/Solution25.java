@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 //(Solution 25)
 
-public class solution25 {
+public class Solution25 {
     public static void main(String[] args) {
-        solution25 d = new solution25();
+        Solution25 d = new Solution25();
         Scanner input = new Scanner(System.in);
         String password;
 

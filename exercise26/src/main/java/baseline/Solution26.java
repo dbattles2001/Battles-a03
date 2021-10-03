@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 //(Solution 26)
 
-public class solution26 extends PaymentCalculator {
+public class Solution26 extends PaymentCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        solution26 d = new solution26();
+        Solution26 d = new Solution26();
         double i;
         double b;
         double p;

@@ -7,9 +7,10 @@ package baseline;
 
 //Solution 34
 
+import java.util.Objects;
 import java.util.Scanner;
 
-public class solution34 {
+public class Solution34 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         /*
@@ -31,14 +32,12 @@ public class solution34 {
          */
         int no = 0;
         int removeChoice = 0;
-        int removed = 0;
 
         String[] nameArray = {"Dustin Battles", "Dwayne Carter", "Antonio Brown", "Bob Evans"};
 
-        while(no == 0) {
-            for (int i = 0; i < nameArray.length; i++) {
-                if(nameArray[i] != "") {
-                    System.out.println(nameArray[i]);
+            for (String s : nameArray) {
+                if (!Objects.equals(s, "")) {
+                    System.out.println(s);
                 }
             }
 
@@ -46,19 +45,19 @@ public class solution34 {
             no = input.nextInt();
 
             if(no == 0) {
-                System.out.println("Alright, which one would you like to remove? Choose a corresponding name 0 - " + nameArray.length);
+                System.out.println("Alright, which one would you like to remove? Choose a corresponding name 0 - " + (nameArray.length - 1));
                 removeChoice = input.nextInt();
             }
 
             for(int i = 0; i<nameArray.length; i++){
                 if(i == removeChoice){
                     nameArray[i] = "";
-                    removed++;
                 }
             }
 
-            if(removed > nameArray.length){
-                no = 1;
+        for (String s : nameArray) {
+            if (!Objects.equals(s, "")) {
+                System.out.println(s);
             }
         }
     }

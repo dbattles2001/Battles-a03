@@ -10,9 +10,8 @@ package baseline;
 import java.util.Scanner;
 import java.util.Random;
 
-public class solution32 {
+public class Solution32 {
     public static void main(String[] args){
-        solution32 d = new solution32();
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
 
@@ -51,7 +50,6 @@ public class solution32 {
 
                 if(difficultyInt > 3 || difficultyInt < 1){
                     System.out.println("Enter a correct choice.");
-                    correct = 0;
                 } else{
                     condition = 1;
                 }
@@ -86,7 +84,6 @@ public class solution32 {
         int randomNumber = rand.nextInt(upperBound) + 1;
         String guess;
         int guessInt = 0;
-        correct = 0;
 
         while(condition == 0) {
             System.out.println("Go ahead and guess!");

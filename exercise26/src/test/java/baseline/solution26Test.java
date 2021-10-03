@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution26Test {
+class Solution26Test {
     @Test
     public void test_calculateMonthsUntilPaidOff(){
-        solution26 d = new solution26();
+        Solution26 d = new Solution26();
 
         double i = 12;
         double b = 5000;

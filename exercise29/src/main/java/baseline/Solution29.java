@@ -1,10 +1,17 @@
 package baseline;
 import java.util.Scanner;
 
-public class solution29 {
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Dustin Battles
+ */
+
+//(Solution 29)
+
+public class Solution29 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        solution29 d = new solution29();
+        Solution29 d = new Solution29();
         /*
             I'll have a conditionMet variable (which is basically just the thing
             i use to determine if you've entered a valid input or not)
@@ -46,8 +53,6 @@ public class solution29 {
     }
     public int yearsItTakes(String years){
         int yearsAsAnInteger = Integer.parseInt(years);
-        int yearsItTakes = 72/yearsAsAnInteger;
-
-        return yearsItTakes;
+        return 72/yearsAsAnInteger;
     }
 }

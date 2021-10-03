@@ -7,6 +7,7 @@ package baseline;
 
 //Solution 35
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -26,10 +27,10 @@ public class Solution35 {
         int i = 0;
 
         while(condition == 0){
-            System.out.println("Print a name:");
+            System.out.println("Print a name (up to 10):");
             array[i] = input.nextLine();
 
-            if(array[i] == "" || array[i] == " "){
+            if(Objects.equals(array[i], "") || Objects.equals(array[i], " ")){
                 condition = 1;
             }else{
                 i++;

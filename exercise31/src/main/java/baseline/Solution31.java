@@ -9,10 +9,10 @@ package baseline;
 
 import java.util.Scanner;
 
-public class solution31 {
+public class Solution31 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        solution31 d = new solution31();
+        Solution31 d = new Solution31();
 
         /*
             while(parseInt is false)

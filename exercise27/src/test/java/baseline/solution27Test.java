@@ -4,16 +4,16 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution27Test {
+class Solution27Test {
     @Test
-    public void test_validateInput(){
-        solution27 d = new solution27();
+    void test_validateInput(){
+        Solution27 d = new Solution27();
 
         String firstName = "d";
         String lastName = "d";
         String zipCode = "d";
         String employeeID = "d";
 
-        assertEquals(d.validateInput(firstName, lastName, zipCode, employeeID), 3);
+        assertEquals(3, d.validateInput(firstName, lastName, zipCode, employeeID));
     }
 }

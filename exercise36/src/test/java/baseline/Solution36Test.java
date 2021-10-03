@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Solution36Test {
     @Test
-    public void test_getAverage(){
+    void test_getAverage(){
         Solution36 d = new Solution36();
 
         //If you're reading this, the 0th array is 0 and is ignored in the
@@ -21,7 +21,7 @@ class Solution36Test {
     }
 
     @Test
-    public void test_getMax(){
+    void test_getMax(){
         Solution36 d = new Solution36();
 
         int[] array = {0, 1, 2, 3};

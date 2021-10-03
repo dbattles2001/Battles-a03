@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class solution25Test {
+class Solution25Test {
     @Test
     public void test_passwordValidator(){
-        solution25 d = new solution25();
+        Solution25 d = new Solution25();
 
         String password = "twentyOne21!";
 

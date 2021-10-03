@@ -23,4 +23,4 @@ run{
     standardInput = System.in
 }
 
-mainClassName = "baseline.solution29"
+mainClassName = "baseline.Solution29"
